@@ -1,17 +1,17 @@
 ---
-title: 文档说明
+title: Getting Started
 position: 1
 parameters:
   - name:
     content:
 content_markdown: |-
-  Mixin 及 Mixin Network 的接入文档（中文版）
+  This is the document of how to use Mixin and Mixin Network.
 
-  本文档包含如何使用 Mixin 相关 API 及如何基于 Mixin Network 创建一个全币种支持的 Mixin 用户，并且不断扫描 Mixin 网络交易数据来获取到相应用户的充值信息，并且管理提现。
+  The document include how to use the API of Mixin, how to use Mixin Network to create a full currency Mixin user, and how to get user's deposits and withdrawals by scan Mixin Network transactions.
 
-  要使用 Mixin Network，首先需要注册一个 App，此后所有的用户创建都将基于 App 的签名进行，同时这个 App 也具有权限可以读取 App 名下所有用户的交易信息。
+  First of all, you need to register a App before use Mixin Network. All user actions will be based on the App, include create user, deposit, withdrawal etc. You can get all of the users' transactions which are created by the App.
 
-  如果有问题或者修改, 欢迎提交 Issue 跟 PR。
+  If there are any problems or updates, you can submit Issues or PR.
 
 left_code_blocks:
   - code_block:

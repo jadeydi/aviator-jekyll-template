@@ -5,7 +5,7 @@ parameters:
   - name:
     content:
 content_markdown: |-
-  你需要处理 Response HTTP Status 只有 20x 或者 500.
+  Only 20x and 500 will be used by Mixin API, you need to pay attention to 500 error, which may be caused by Web Server not Mixin API.
 
   | Status | Code | Description |
   | --- | --- | --- |
@@ -37,7 +37,7 @@ content_markdown: |-
   | 500 | 7000 | Blaze server error. |
   | 500 | 7001 | The blaze operation timeout. |
 
-  所有的错误都会用以下的格式方式返回。除非服务器链接不上, Web Server 挂掉以外.
+  All errors will return JSON in the following format:
 left_code_blocks:
   - code_block: |-
       {
