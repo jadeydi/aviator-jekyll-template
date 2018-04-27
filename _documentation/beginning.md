@@ -18,7 +18,10 @@ left_code_blocks:
     title:
     language:
 right_code_blocks:
-  - code_block:
-    title:
-    language:
+  - code_block: |-
+      func Begin() string {
+        return "Wellcome To Mixin"
+      }
+    title: 
+    language: golang
 ---

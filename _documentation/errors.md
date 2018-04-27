@@ -48,7 +48,12 @@ left_code_blocks:
     title: Response
     language: json
 right_code_blocks:
-  - code_block:
-    title:
-    language:
+  - code_block: |-
+      {
+        "status": 20x,
+        "code": 403,
+        "description": "Internal Server Error."
+      }
+    title: Response
+    language: javascript
 ---

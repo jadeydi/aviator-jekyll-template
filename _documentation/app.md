@@ -34,7 +34,10 @@ left_code_blocks:
     title:
     language:
 right_code_blocks:
-  - code_block:
+  - code_block: |-
+      func App() string{
+        return "It's time to open the door"
+      }
     title:
-    language:
+    language: golang
 ---
