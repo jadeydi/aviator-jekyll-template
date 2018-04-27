@@ -42,7 +42,7 @@ left_code_blocks:
   - code_block: |-
       {
         "status": 20x,
-        "code": 20x,
+        "code": 403,
         "description": "Internal Server Error."
       }
     title: Response

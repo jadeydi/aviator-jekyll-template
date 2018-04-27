@@ -1,5 +1,5 @@
 ---
-title: Getting Started
+title: Beginning
 position: 1
 parameters:
   - name:
