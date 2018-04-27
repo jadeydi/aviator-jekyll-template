@@ -5,19 +5,45 @@ parameters:
   - name:
     content:
 content_markdown: |-
-  | Code | Name | Description |
-  | --- | --- | --- |
-  | 200 | OK | Success |
-  | 201 | Created | Creation Successful |
-  | 400 | Bad Request | We could not process that action |
-  | 403 | Forbidden | We couldn't authenticate you |
+  你需要处理 Response HTTP Status 只有 20x 或者 500.
 
-  All errors will return JSON in the following format:
+  | Status | Code | Description |
+  | --- | --- | --- |
+  | 202 | 400 | The request body can’t be pasred as valid data. |
+  | 202 | 403 | Forbidden. |
+  | 202 | 404 | The endpoint is not found. |
+  | 202 | 429 | Too Many Requests. |
+  | 202 | 10002 | The request data has invalid field. |
+  | 202 | 10003 | Failed to deliver SMS to +8613800138000. |
+  | 202 | 20110 | Invalid phone number +8613800138000|
+  | 202 | 20111 | Insufficient identity numbers. | 
+  | 202 | 20112 | Invalid invitation code. |
+  | 202 | 20113 | Invalid phone verification code. |
+  | 202 | 20114 | Expired phone verification code. |
+  | 202 | 20115 | Invalid QR code. |
+  | 202 | 20116 | The group chat is full. |
+  | 202 | 20117 | Insufficient balance. |
+  | 202 | 20118 | Invalid PIN format. |
+  | 202 | 20119 | PIN incorrect. |
+  | 202 | 20120 | Transfer amount too small. |
+  | 202 | 20121 | Authorization code expired. |
+  | 202 | 20122 | Phone number used by someone else. |
+  | 202 | 20123 | You have created too many apps, the maximum is 10. |
+  | 202 | 30100 | Chain not in sync. |
+  | 202 | 30101 | Private key for XYZ missing. |
+  | 202 | 30102 | Invalid address format. |
+  | 202 | 30103 | Insufficient %asset_id% pool |
+  | 500 | 500 | Internal Server Error. |
+  | 500 | 7000 | Blaze server error. |
+  | 500 | 7001 | The blaze operation timeout. |
+
+  所有的错误都会用以下的格式方式返回。除非服务器链接不上, Web Server 挂掉以外.
 left_code_blocks:
   - code_block: |-
       {
-        "error": true,
-        "message": "error message here"
+        "status": 20x,
+        "code": 20x,
+        "description": "Internal Server Error."
       }
     title: Response
     language: json
