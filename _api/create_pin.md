@@ -1,20 +1,21 @@
 ---
-title: Create User
-position: 1.0
+title: Create Pin
+position: 2.0
 type: post
-description: PATH /users
+description: PATH /pin/update
 parameters:
-  - name: session_secret
-    content: Base64 of RSA PUBLIC KEY
-  - name: full_name
-    content: Name of An New User
+  - name: old_pin
+    content: |
+      "" for Create or "ENCRYPTED_PIN" for update
+  - name: pin
+    content: Encrypted New PIN
 content_markdown: |-
-  Create a new none-phone user.
+  Create or Update user's Pin, use `pin_token` to get an Encrypted PIN.
 
 left_code_blocks:
   - code_block: |-
       // ACCESS_TOKEN is Signed Authorization Token
-      curl -X POST -H "Authorization: Bearer ACCESS_TOKEN" -H "Content-Type: application/json" https://api.mixin.one/users
+      curl -X POST -H "Authorization: Bearer ACCESS_TOKEN" -H "Content-Type: application/json" https://api.mixin.one/pin/update
     title: Curl
     language: bash
 

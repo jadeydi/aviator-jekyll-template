@@ -41,7 +41,7 @@ content_markdown: |-
 left_code_blocks:
   - code_block: |-
       {
-        "status": 20x,
+        "status": 202,
         "code": 403,
         "description": "Internal Server Error."
       }
@@ -50,7 +50,7 @@ left_code_blocks:
 right_code_blocks:
   - code_block: |-
       {
-        "status": 20x,
+        "status": 202,
         "code": 403,
         "description": "Internal Server Error."
       }
