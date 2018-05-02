@@ -1,6 +1,6 @@
 ---
 title: Deposit
-position: 7.0
+position: 160
 type: get
 description: PATH /assets/UUID
 content_markdown: |-

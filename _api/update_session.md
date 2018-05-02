@@ -1,15 +1,24 @@
 ---
-title: Rotate User's QR
-position: 152
-type: get
-description: PATH /me/code
+title: Update Device Info
+position: 140
+type: post
+description: PATH /session
+parameters:
+  - name: platform
+    content: iOS
+  - name: platform_version
+    content: 11.0
+  - name: app_version
+    content: 0.2.4
+  - name: notification_token
+    content: "APNS OR FCM token"
 content_markdown: |-
-  Change user's QR Code
+  User Login
 
 left_code_blocks:
   - code_block: |-
       // ACCESS_TOKEN is Signed Authorization Token
-      curl -H "Authorization: Bearer eyJhbGciOiJ...yrSxTHwzYjjueAxKJt4hmj0pY" -H "Content-Type: application/json" https://api.mixin.one/me/code
+      curl -X POST -H "Authorization: Bearer ACCESS_TOKEN" -H "Content-Type: application/json" https://api.mixin.one/session -D '{"platform": "iOS", "platform_version": "11.0", "app_version": "0.2.4", "notification_token": "token"}'
     title: Curl
     language: bash
 
@@ -22,7 +31,6 @@ right_code_blocks:
         full_name: "World Around",
         ...
         session_id: "00c5a4ae-dcdc-48db-ab8e-a7eef69b442d",
-        code_id: "00c5a4ae-dcdc-48db-ab8e-a7eef69b442d", // QR Code
         pin_token: "GSusC2myf/meJJnqorrcg2EWnHE...h9fTFJfR4=",
       }
     title: Response

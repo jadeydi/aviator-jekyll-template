@@ -1,0 +1,30 @@
+---
+title: Read Addresses
+position: 171
+type: get
+description: PATH /assets/:id/addresses
+content_markdown: |-
+  Get user's addresses
+
+left_code_blocks:
+  - code_block: |-
+      // ACCESS_TOKEN is Signed Authorization Token
+      curl -H "Authorization: Bearer ACCESS_TOKEN" -H "Content-Type: application/json" https://api.mixin.one/assets/:id/addresses
+    title: Curl
+    language: bash
+
+right_code_blocks:
+  - code_block: |-
+      [{
+        type: "address",
+        address_id: "00c5a4ae-dcdc-48db-ab8e-a7eef69b442d",
+        asset_id: "00c5a4ae-dcdc-48db-ab8e-a7eef69b442d",
+        public_key: "0xAE9EA2D22E49B4c845Bbe57B57aB7172e548cE0B",
+        label: "Jason's ETH Address",
+        updated_at: "2018-01-07T07:24:05.88098376Z"
+      },
+      ...
+      ]
+    title: Response
+    language: json
+---

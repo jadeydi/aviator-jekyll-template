@@ -1,6 +1,6 @@
 ---
 title: Create Pin
-position: 2.0
+position: 130
 type: post
 description: PATH /pin/update
 parameters:
@@ -15,7 +15,7 @@ content_markdown: |-
 left_code_blocks:
   - code_block: |-
       // ACCESS_TOKEN is Signed Authorization Token
-      curl -X POST -H "Authorization: Bearer ACCESS_TOKEN" -H "Content-Type: application/json" https://api.mixin.one/pin/update
+      curl -X POST -H "Authorization: Bearer ACCESS_TOKEN" -H "Content-Type: application/json" https://api.mixin.one/pin/update -D '{"old_pin": "Encrypted PIN or Null", "pin": "Encrypted PIN"}'
     title: Curl
     language: bash
 

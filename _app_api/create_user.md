@@ -1,15 +1,20 @@
 ---
-title: Rotate User's QR
-position: 152
-type: get
-description: PATH /me/code
+title: Create User
+position: 100
+type: post
+description: PATH /users
+parameters:
+  - name: session_secret
+    content: Base64 of RSA PUBLIC KEY
+  - name: full_name
+    content: Name of An New User
 content_markdown: |-
-  Change user's QR Code
+  Create a new none-phone user.
 
 left_code_blocks:
   - code_block: |-
       // ACCESS_TOKEN is Signed Authorization Token
-      curl -H "Authorization: Bearer eyJhbGciOiJ...yrSxTHwzYjjueAxKJt4hmj0pY" -H "Content-Type: application/json" https://api.mixin.one/me/code
+      curl -X POST -H "Authorization: Bearer ACCESS_TOKEN" -H "Content-Type: application/json" https://api.mixin.one/users
     title: Curl
     language: bash
 
@@ -22,7 +27,6 @@ right_code_blocks:
         full_name: "World Around",
         ...
         session_id: "00c5a4ae-dcdc-48db-ab8e-a7eef69b442d",
-        code_id: "00c5a4ae-dcdc-48db-ab8e-a7eef69b442d", // QR Code
         pin_token: "GSusC2myf/meJJnqorrcg2EWnHE...h9fTFJfR4=",
       }
     title: Response

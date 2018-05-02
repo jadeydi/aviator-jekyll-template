@@ -1,20 +1,18 @@
 ---
-title: Create User
-position: 1.0
+title: Verify Pin
+position: 131
 type: post
-description: PATH /users
+description: PATH /pin/verify
 parameters:
-  - name: session_secret
-    content: Base64 of RSA PUBLIC KEY
-  - name: full_name
-    content: Name of An New User
+  - name: pin
+    content: Encrypted PIN
 content_markdown: |-
-  Create a new none-phone user.
+  Verify user's Pin.
 
 left_code_blocks:
   - code_block: |-
       // ACCESS_TOKEN is Signed Authorization Token
-      curl -X POST -H "Authorization: Bearer ACCESS_TOKEN" -H "Content-Type: application/json" https://api.mixin.one/users
+      curl -X POST -H "Authorization: Bearer ACCESS_TOKEN" -H "Content-Type: application/json" https://api.mixin.one/pin/verify -D '{"pin": "Encrypted PIN"}'
     title: Curl
     language: bash
 
