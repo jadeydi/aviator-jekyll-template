@@ -8,11 +8,11 @@ content_markdown: |-
   If you want to create a tranfer or change your pin etc. You must have an Encrypted PIN. Following is the explaination of params which are used by encrypting pin.
 
   ``` golang
-    pin: PinCode
+    pin: PinCode e.g.: 1234
     pinToken: PinToken
     sessionId: SessionId
     key: PrivateKey
-    iterator: Can be used only once and Auto Increasement, initial Internal is 0, and will be reset after sign out.
+    iterator: must be bigger than the previous, the first time must be greater than 0. After exiting, it will be reset to 0.
   ```
 
   Notice: if you want to change you old pin, you must encrypt old pin first, then new pin in order. Following is an example of Encrypted PIN.
@@ -20,7 +20,7 @@ content_markdown: |-
 
   ```golang
     // Encrypted PIN
-    Djx9Z9E7mSUnZikrhRrflrpQEEfy0BrZ+l0aBwARHhgVHmbQkkDAsczAu2pU/hnr
+    XgG4PAKf/Jq39Vo2t2oYPMDyoz1JMoC2+HZwzko44Yp8K565ZRhCNCPfgVZcw9/2
   ```
 
 
@@ -30,7 +30,12 @@ left_code_blocks:
     language:
 right_code_blocks:
   - code_block: |-
-      func EncryptPIN(ctx context.Context, pin, pinToken, sessionId string, key *rsa.PrivateKey, iterator uint64) string {
+      func EncryptPIN(pin, pinToken, sessionId, privateKey string, iterator uint64) string {
+        keyBlock, _ := pem.Decode([]byte(privateKey))
+        key, err := x509.ParsePKCS1PrivateKey(keyBlock.Bytes)
+        if err != nil {
+          return ""
+        }
         token, _ := base64.StdEncoding.DecodeString(pinToken)
         keyBytes, err := rsa.DecryptOAEP(sha256.New(), rand.Reader, key, token, []byte(sessionId))
         if err != nil {

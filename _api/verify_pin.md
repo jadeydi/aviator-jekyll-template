@@ -1,14 +1,17 @@
 ---
-title: Rotate User's QR
-position: 152
-type: get
-description: PATH /me/code
+title: Verify Pin
+position: 131
+type: post
+description: PATH /pin/verify
+parameters:
+  - name: pin
+    content: Encrypted PIN
 content_markdown: |-
-  Change user's QR Code
+  Verify user's Pin.
 
 left_code_blocks:
   - code_block: |-
-      curl -i -H "Mixin-Device-Id: 00a5a4ae-dcdc-48db-ab8e-a7eef69b441d" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MzMxMTEzMjEsImlhdCI6MTUyNTMzNTMyMSwianRpIjoiNDY0MTEwN2MtMDFiNS00MzcyLTgwYmUtYzJmOThhYTIxMWY2Iiwic2lkIjoiYTM0YzA3YTktNzU1ZC00YjU0LTk0YzUtZTQ1ZTlhMmRkNDNlIiwic2lnIjoiY2ZlZTI1NDZiNDAxMjMzOGQ5MTc0ODI2YmNkODk4MWY0NDdkNTM4OWVhMDE0MDU1OTM1NzY3OGRiNGUzNzA2NSIsInVpZCI6IjA2YWVkMWUzLWJkNzctNGE1OS05OTFhLTViYjVhZTZmYmIwOSJ9.fLpAT5_Xku0oEUmSfzxH7FJeWbktxIksxGs1VSYtAF0Dhj7L8XVCdPHGgXfYotceE-H3PrkxO_aIJKPxOPS2YJBLVXCGTGoi_DSDcNweXCAD5pol9NEGIDgB04fcQJNEWUsrtZM_mpFLjBhOos-S-2Qf0CrVVu36MOYpj1VEspQ" "https://api.mixin.one/me/code"
+      curl -i -H "Mixin-Device-Id: 00a5a4ae-dcdc-48db-ab8e-a7eef69b441d" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MzMxMDkzMDIsImlhdCI6MTUyNTMzMzMwMiwianRpIjoiZGNjNjM3ZGQtY2UxMi00MTQwLWI2YzItYjU1OGM1MTYxYzQxIiwic2lkIjoiYTM0YzA3YTktNzU1ZC00YjU0LTk0YzUtZTQ1ZTlhMmRkNDNlIiwic2lnIjoiZTdkMThmMDJmZjBhMTBjNzQ1MzI4OGIyYzkyNTMyZGQ5OWZlMWYyYjc1MzQzYWY0NWI4YjMyYjk2MTE1ZWRkOSIsInVpZCI6IjA2YWVkMWUzLWJkNzctNGE1OS05OTFhLTViYjVhZTZmYmIwOSJ9.R7p5uWHQJDldW-W2CK9sdn4rVKgUbV8ITD9oZZRgb_7j7YVTGF4ulJzt9M_GprKkXmNG2Ox9IO6uIQE-RvqHziSemGAoW1__fYnWrZ8ZyOo7EZeAkbGQ1W-gjjZKz9BqxBvakew_xdgQdnGv0aJq8WffnQkyNxy1DkmITR4kehg" "https://api.mixin.one/pin/update" -X POST --data '{"pin":"rIqULBd+xaiLuKImKAI7r72azK0zMPy7dIw1fQfhYskWKxkObZvOv5E6A8bACaws"}'
     title: Curl
     language: bash
 

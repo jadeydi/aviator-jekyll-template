@@ -40,19 +40,23 @@ content_markdown: |-
   All errors will return JSON in the following format:
 left_code_blocks:
   - code_block: |-
-      {
-        "status": 202,
-        "code": 403,
-        "description": "Internal Server Error."
+      {  
+        "error":{  
+          "status":500,
+          "code":500,
+          "description":"Internal Server Error"
+        }
       }
     title: Response
     language: json
 right_code_blocks:
   - code_block: |-
-      {
-        "status": 202,
-        "code": 403,
-        "description": "Internal Server Error."
+      {  
+        "error":{  
+          "status":500,
+          "code":500,
+          "description":"Internal Server Error"
+        }
       }
     title: Response
     language: javascript

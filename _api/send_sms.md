@@ -6,24 +6,26 @@ description: PATH /verifications
 parameters:
   - name: phone
     content: |
-      "+8613800013800"
+      String: "+8613800013800"
   - name: purpose
     content: |
-      "SESSION"  or "PHONE"
+      String: "SESSION" or "PHONE"
 content_markdown: |-
   Send Message to user's phone
 
 left_code_blocks:
   - code_block: |-
-      curl -X POST -H "Content-Type: application/json" https://api.mixin.one/verifications -D '{"phone": "+8613800013800", "purpose": "SESSION"}'
+      curl -i -H "Mixin-Device-Id: 00a5a4ae-dcdc-48db-ab8e-a7eef69b441d" -H "Content-Type: application/json" "https://api.mixin.one/verifications" -XPOST --data '{"phone": "+8613800013800", "purpose": "SESSION"}'
     title: Curl
     language: bash
 
 right_code_blocks:
   - code_block: |-
       {
-        type: "phone_verification",
-        id: "00c5a4ae-dcdc-48db-ab8e-a7eef69b442d",
+        "data":{
+          "type":"phone_verification",
+          "id":"1412379f-c0bd-456d-993e-dfd584cc54c1"
+        }
       }
     title: Response
     language: json

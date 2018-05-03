@@ -4,7 +4,7 @@ position: 5
 parameters:
 
 content_markdown: |-
-  Since you have to register an App before you can use Mixin Network, please go to [https://developers.mixin.one/](https://developers.mixin.one/). You can get the following informations. All of them will be used in the future. Following is the explaination of the params
+  Since you have to register an App before you can use Mixin Network, please go to [https://developers.mixin.one/](https://developers.mixin.one/). You can get the following informations. All of them will be used in the future. Following is an example of the parameters.
 
   ``` golang
     ClientId        = "89e0bdee-c355-47f2-945a-be48be875606"
