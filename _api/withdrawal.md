@@ -14,7 +14,7 @@ parameters:
     content: |
       String: "Encrypted Pin"
   - name: trace_id
-    content: 
+    content: |
       String: UUID
   - name: memo
     content: |

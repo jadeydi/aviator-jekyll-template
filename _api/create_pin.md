@@ -6,9 +6,10 @@ description: PATH /pin/update
 parameters:
   - name: old_pin
     content: |
-      "" for Create or "ENCRYPTED_PIN" for update
+      String: "" OR Old Encrypted PIN
   - name: pin
-    content: Encrypted New PIN
+    content: |
+      String: Encrypted New PIN
 content_markdown: |-
   Create or Update user's Pin, use `pin_token` to get an Encrypted PIN.
 

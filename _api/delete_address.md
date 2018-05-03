@@ -3,6 +3,10 @@ title: Delete Address
 position: 172
 type: post
 description: PATH /addresses/:id/delete
+parameters:
+  - name: pin
+    content: |
+      String: Encrypted PIN
 content_markdown: |-
   Delete user's address
 

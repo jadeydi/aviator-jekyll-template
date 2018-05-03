@@ -5,7 +5,8 @@ type: post
 description: PATH /pin/verify
 parameters:
   - name: pin
-    content: Encrypted PIN
+    content: |
+      String: Encrypted PIN
 content_markdown: |-
   Verify user's Pin.
 
